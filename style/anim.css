@@ -1,0 +1,132 @@
+
+.reward{
+    width: 150px;
+    height: 150px;
+    /*! position: absolute; */
+    /*! top: 50%; */
+    /*! left: 50%; */
+    z-index: 100;
+    background-position: center center;
+    background-size: 100% 100%;
+    /*! transform: translate(-50%, -50%); */
+    background-repeat: no-repeat;
+    animation: all .2s ease-in; 
+}
+
+.reward.line-correct {
+    background-image: url('./svg/clapping-icon.svg');
+}
+
+.reward.line-incorrect {
+    background-image: url('./svg/surprisedo-icon.svg');
+}
+
+.reward.all-success {
+    background-image: url('./svg/star-struck-emoji-icon.svg');
+}
+
+.reward.all-finished {
+    background-image: url('./svg/happy-emoji-icon.svg');
+}
+
+.reward-layer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.layerfadein{
+    animation: layerfadein .2s ease-in; 
+}
+
+@keyframes layerfadein{
+    from{
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    to{
+        background-color: rgba(0, 0, 0, 0.28);
+    }
+}
+
+.reward-layer.layerfadein.finish{
+    background-color: rgb(223, 220, 216);
+    animation: layerfadewhenfinish .2s ease-in;
+}
+
+@keyframes layerfadewhenfinish{
+    from{
+        background-color: rgba(223, 220, 216, 0);
+    }
+
+    to{
+        background-color: rgba(223, 220, 216, 1);
+    }
+}
+
+.fadein{
+    animation: fadein 2s ease; 
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+.zoomin{
+    animation: zoomin .65s cubic-bezier(.76,.05,.86,.06); 
+}
+@keyframes zoomin {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zoomout{
+    animation: zoomout .35s ease-in; 
+}
+@keyframes zoomout {
+    0% {
+        transform: scale(5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zoominout{
+    visibility: visible !important;
+    animation: zoominout .75s cubic-bezier(1,0,0,1); 
+
+}
+@keyframes zoominout {
+    0%{
+        transform: scale(0);
+    }
+    45% {
+        transform: scale(5);
+    }
+    55% {
+        transform: scale(5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

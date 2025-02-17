@@ -1,0 +1,323 @@
+html, body {
+    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+.content {
+    /* Center the content */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    height: 100%;
+}
+
+.draggable {
+    /* Required styles */
+    cursor: move;
+    position: absolute;
+    user-select: none;
+
+    /* Center the content */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    /* Misc */
+    border: 1px solid #cbd5e0;
+    height: 8rem;
+    width: 8rem;
+}
+
+.box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(128, 193, 195);
+    border-radius: 3px;
+}
+
+#box1 {
+    background-color: rgb(32, 111, 113);
+}
+
+.playground{
+    display: flex;
+    margin: 0 auto;
+    padding: 2%;
+    background-color: rgb(192, 188, 183);
+    position: relative;
+    height: 100%;
+    max-width: 85vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.palyground-inner{
+    display: flex;
+    background-color: #dfdcd8;
+    padding: 1%;
+    position: relative;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 90%;
+}
+
+.matchbox{
+
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.matchbox #match-from, 
+.matchbox #match-to{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.matchland{
+    width: 0;
+}
+.matchcard{
+    width: 15vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 3.3%;
+    user-select: none;
+    position: relative;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 4px 0px #757575;
+    aspect-ratio: 1/1;
+}
+
+.matchcard.in-game:hover, .matchcard.active,
+.matchcard.in-game:active, 
+.matchcard.in-game:focus{
+    /*! width: 104px; */
+    /*! height: 104px; */
+    /*! margin-top: -2px; */
+    /*! margin-left: -2px; */
+    /*! margin-bottom: 8px; */
+    box-shadow: 0px 0px 8px 4px #757575;
+    background-color: #e6f1e5;
+}
+.matchcard.in-game:hover .letter,
+.matchcard.in-game:focus .letter,
+.matchcard.in-game:active .letter,
+.matchcard.active .letter{
+    /*! font-size: 64px; */
+}
+.matchcard .letter{
+    font-size: 64px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 3px solid #1c3f80;
+    display: inline-flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: rgb(236, 17, 17);
+    line-height: 64px;
+    box-sizing: border-box;
+    width: 96%;
+    aspect-ratio: 1/1;
+}
+
+.matchcard .voice{
+    border: 3px solid #1c3f80;
+    width: inherit;
+    display: inline-flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: rgb(236, 17, 17);
+    box-sizing: border-box;
+    background-image: url('./img/sound.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 82px;
+    cursor: pointer;
+}
+
+.matchcard.finish{
+    opacity: 0.65;
+    /*! border: 1px solid #918a80; */
+    box-sizing: content-box;
+    border-radius: 4px;
+    box-shadow: none;
+    background-color: #fefefe;
+}
+
+.matchcard .letter.vowel{
+    color: #1558d5;
+}
+.matchcard .voice{
+    position: relative;
+    height: 100%;
+}
+.matchcard .figure{
+    
+    border: 3px solid #1c3f80;
+    width: inherit;
+    display: flex;
+    height: inherit;
+    /*! align-items: center; */
+    /*! justify-content: center; */
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 1vh;
+    position: relative;
+    user-select: none;
+}
+
+.matchcard .figure img{
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+.panel {
+
+    height: 10%;
+    box-sizing: border-box;
+}
+
+.panel-inner{
+
+    display: flex;
+    padding: 2vh 0 0 0;
+}
+.panel-inner.game-mode{
+    flex-direction: column;
+}
+.btn{
+
+    background-color: #985f49;
+    height: 40px;
+    width: auto;
+    border-radius: 3px;
+}
+
+.icon-btn{
+    width: 16%;
+    margin: 0 7px 0 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 30px 30px;
+    background-color: #655e53;
+    cursor: pointer;
+}
+
+.btn-home{
+
+    background-image: url('./svg/home-color-icon.svg');
+}
+
+.btn-reload{
+    background-image: url('./svg/reload-button-green-icon.svg');
+}
+
+.btn-status{
+    display: flex;
+    background-color: #dfdcd8;
+    width: 100%;
+}
+
+.btn-game-mode{
+    width: 100%;
+    margin: 0 7px 20px 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 82px;
+    background-color: #dcd8d2;
+    cursor: pointer;
+    height: 100px;
+    box-shadow: 5px 5px 7px -2px #00000057;
+}
+.btn-game-mode:active{
+
+    margin: 2px 7px 18px 2px;
+    background-color: #ff3e82;
+    box-shadow: 2px 2px 7px -2px #00000057;
+}
+
+.btn-game-mode:last-child{
+    margin: 0;
+}
+.btn-game-mode:last-child:active{
+    margin: 2px 7px 0px 2px;
+}
+.letter-to-letter{
+    background-image: url('./svg/letter-to-letter.svg');
+}
+
+.voice-to-letter{
+    background-image: url('./svg/voice-to-letter.svg');
+}
+
+.letter-to-figure{
+    background-image: url('./svg/letter-to-figure.svg');
+}
+
+.stars-ct{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    z-index: 100;
+}
+
+.stars-ct .stars-inner{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.stars-inner .reward-star{
+    background-image: url('./img/reward.png');
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+    /*! position: relative; */
+}
+
+.palyground-inner.gamemenu{
+    border-radius: 3px;
+    height: auto;
+    justify-content: center;
+    padding: 20px;
+}
+
+.playground.gamemenu{
+    /*! height: 599px; */
+}
+
+.extralarge-btn{
+    position: relative;
+    padding: 24px;
+    margin-top: 20px;
+    font-size: 32px;
+    background-color: #39bf46;
+    border: 3px solid #44944d;
+    border-radius: 12px;
+    color: #314a28;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px #567450;
+}
